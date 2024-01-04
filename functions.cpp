@@ -1,7 +1,12 @@
 #include "Header.h"
 
 
-int main() {
+string Hangman::dictionary() {
 
+}
+void Hangman::displayMenu() {
+
+}
+void Hangman::GenerateWord() {
 
 }
