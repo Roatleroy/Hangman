@@ -1,28 +1,27 @@
-C++ Hangman ReadMe 
+<h1> C++ Hangman Read </h1>
 
-Name: Hangman
+<strong>Name:</strong> Hangman
 
-Version: 0.0.0.3
+<strong>Version: </strong> 0.0.0.3
 
-Contributors: Roatleroy
+<strong> Contributors:</strong> Roatleroy
 
-________________________________________________________________________________________________________
-Description:
+
+
+<h2> Description: </h2> 
 The project started as a goal to learn C++. 
-________________________________________________________________________________________________________
-CHANGELOG
 
-- 0.3
+<h2> Changelog </h2>
 
-Create Word Txt document
+<strong>0.3 </strong> 
 
-Set up random number function
+- Create Word Txt document
+- Set up random number function
 
-- 0.2
+<strong>0.2 </strong> 
+- Generate display Hangman function to display hangman man as player guesses letters
+- Create Main/Function/Header files
 
-Generate display Hangman function to display hangman man as player guesses letters
-
-- 0.1
-
-First attempt to Hangman!
+<strong>0.1 </strong> 
+- First attempt to Hangman!
 
