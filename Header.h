@@ -8,11 +8,13 @@ using namespace std;
 class Hangman {
 public:
 
-	string dictionary();
+	//string dictionary();
 	void displayMenu();
 	void GenerateWord();
+	void displayHangman(int count);
+
 
 private:
-
+	string Man[10] = {"(", ")", "/", "-", "-", "/", "|", "|", "-", "-"};
 
 };
