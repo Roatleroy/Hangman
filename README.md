@@ -1,7 +1,11 @@
-C++ Hangman ReadMe
+C++ Hangman ReadMe 
+
 Name: Hangman
+
 Version: 0.0.0.4
+
 Contributors: Roatleroy
+
 ________________________________________________________________________________________________________
 Description
 The project started as a goal to learn C++. 
