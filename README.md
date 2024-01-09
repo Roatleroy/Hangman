@@ -17,7 +17,7 @@ The project started as a goal to learn C++. It will take Ten Guesses before fail
 
 ULI = UNKNOWN LETTER INDICATOR
 
-- Find a way to go through Word Text document and display it on screen
+- Find a way to go through Word Text file and to display chosen words to the screen by random number function
 - Take the string value, convert each letter to char and replace with ULI( '_' )
   then display on screen
 - Create function to take in user input and to either change a ULI when a correct letter is guessed to correct letter
