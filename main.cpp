@@ -1,22 +1,14 @@
 #include "Header.h"
 
+
+
 int main() {
-	
-	Hangman Hangman;
-	int wait = 0;
+	Hangman Man;
+
+	ifstream in("Words.txt");
+
+	Man.GenerateWord(in);
 
 
-	while (wait != 11) {
-		cout << endl << endl;
-
-		++wait;
-
-		Hangman.displayHangman(wait);
-
-	}
-
-	cout << endl << endl;
-
-	Hangman.dictionary();
-
+	return 0;
 }

@@ -16,14 +16,22 @@ void Hangman::dictionary() {
 }
 
 
-//char Hangman::displayguesses() {
+char Hangman::displayguesses() {
+	char guess;
 
-//}
+	cin >> guess;
+
+	cout << endl;
+
+	cout << guess << endl << endl;
+
+	return guess;
+}
 
 int Hangman::returnRandomNumber() {
 	srand(time(0));
 
-	return (1 + rand() % 100);
+	return (1 + rand() % 852);
 }
 
 
@@ -42,8 +50,17 @@ void Hangman::displayMenu() {
 		<< " ______|" << endl;
 
 }
-void Hangman::GenerateWord() {
+void Hangman::GenerateWord(ifstream &file) {
 
+	for (int i = 0; i < returnRandomNumber(); ++i) {
+		getline(file, line);
+	}
+
+	strcpy_s(charArray, line.c_str());
+
+	for (int i = 0; i < line.length(); i++) {
+		charEmpty[i] = '-';
+	}
 }
 
 void Hangman::displayHangman(int butter) {
