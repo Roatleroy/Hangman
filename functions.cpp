@@ -1,9 +1,32 @@
 #include "Header.h"
 
 
-//string Hangman::dictionary() {
+void Hangman::dictionary() {
+
+	map <string, string> dictionary;
+
+	for (auto pair : dictionary) {
+		cout << pair.first;
+		cout << pair.second;
+	}
+	
+
+	
+
+}
+
+
+//char Hangman::displayguesses() {
 
 //}
+
+int Hangman::returnRandomNumber() {
+	srand(time(0));
+
+	return (1 + rand() % 100);
+}
+
+
 void Hangman::displayMenu() {
 	cout << "Menu: " << endl
 		<< "The hangman will generate a random word." << endl

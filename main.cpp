@@ -15,7 +15,8 @@ int main() {
 
 	}
 
+	cout << endl << endl;
 
-
+	Hangman.dictionary();
 
 }
