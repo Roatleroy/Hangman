@@ -10,22 +10,65 @@ void Hangman::dictionary() {
 		cout << pair.second;
 	}
 	
+}
 
+
+void Hangman::Compare(char guess) {
+	int I = 0;
+
+	for (int i = 0; i < line.length(); i++) {
+		if (guess == charArray[i]) {
+			charEmpty[i] = guess;
+			I++;
+		}
+	}
+
+
+	if (I == 0) {
+		displayGuessArray[count] = guess;
+		count++;
+	}
 	
 
 }
 
+void Hangman::reset() {
 
-char Hangman::displayguesses() {
-	char guess;
+	count = 0;
 
-	cin >> guess;
+	for (int i = 0; i < sizeof(charArray); ++i) {
+		displayGuessArray[i] = ' ';
+	}
 
-	cout << endl;
+}
 
-	cout << guess << endl << endl;
+bool Hangman::CheckWin() {
 
-	return guess;
+	int n = sizeof(charEmpty);
+
+	for (int i = 0; i < n; ++i) {
+		if (charEmpty[i] == '-') {
+			return true;
+		}
+	}
+
+	if (count == 10) {
+		return false;
+	}
+
+		return false;
+
+}
+
+
+void Hangman::displayguesses() {
+
+	int n = sizeof(displayGuessArray);
+
+	for (int i = 0; i < n; ++i) {
+		cout << displayGuessArray[i] << " ";
+	}
+
 }
 
 int Hangman::returnRandomNumber() {
@@ -40,16 +83,8 @@ void Hangman::displayMenu() {
 		<< "The hangman will generate a random word." << endl
 		<< "Type in one letter at a time to guess." << endl << endl;
 
-
-	cout << "   ____" << endl
-		<< "  |    |" << endl
-		<< "  ()   |" << endl
-		<< " /--/  |" << endl
-		<< "  ||   |" << endl
-		<< "  --   |" << endl
-		<< " ______|" << endl;
-
 }
+
 void Hangman::GenerateWord(ifstream &file) {
 
 	for (int i = 0; i < returnRandomNumber(); ++i) {
@@ -63,9 +98,27 @@ void Hangman::GenerateWord(ifstream &file) {
 	}
 }
 
-void Hangman::displayHangman(int butter) {
-	int count = butter;
+void Hangman::displayWord() {
 
+	cout << "       ";
+
+	for (int i = 0; i < line.length(); i++) {
+		cout << charEmpty[i];
+	}
+}
+
+void Hangman::displayHangman() {
+	
+
+	if (count == 0) {
+		cout << "          ____" << endl
+			<< "         |    |" << endl
+			<< "         " << "     |" << endl
+			<< "        " << "      |" << endl
+			<< "         " << "     |" << endl
+			<< "         " << "     |" << endl
+			<< "        ______|" << endl;
+	}
 	if (count == 1) {
 		cout << "          ____" << endl
 			<< "         |    |" << endl
@@ -156,11 +209,6 @@ void Hangman::displayHangman(int butter) {
 			<< "         " << Man[8] << Man[9] << "   |" << endl
 			<< "        ______|" << endl;
 	}
-
-
-
-
-	
 
    
 }

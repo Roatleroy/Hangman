@@ -5,6 +5,8 @@
 #include "iomanip"
 #include <map>
 #include <cstdlib>
+#include <stdlib.h> 
+#include <cstring>
 
 using namespace std;
 
@@ -21,13 +23,21 @@ public:
 	void GenerateWord(ifstream &file);
 
 	// Displays the hangman and adds body parts as user guesses wrong
-	void displayHangman(int count);
+	void displayHangman();
 
 	// Displays the users to the side when guessed wrong and on the ULI's when right
-	char displayguesses();
+	void displayguesses();
 
 	// Returns Random number based on time for random word retrieval 
 	int returnRandomNumber();
+
+	void displayWord();
+
+	void Compare(char guess);
+
+	bool CheckWin();
+
+	void reset();
 
 
 
@@ -35,5 +45,7 @@ private:
 	string Man[10] = {"(", ")", "/", "-", "-", "/", "|", "|", "-", "-"};
 	char charArray[13];
 	char charEmpty[13];
+	char displayGuessArray[13];
 	string line;
+	int count = 0;
 };
