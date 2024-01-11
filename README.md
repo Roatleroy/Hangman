@@ -16,7 +16,7 @@ The project started as a goal to learn C++. It will take Ten Guesses before fail
 <strong>Future:  </strong>
 ULI = UNKNOWN LETTER INDICATOR
 
-- System is going through a Assertion failure trying to figure it out currently. (says something about buffer sizeb being to small)
+- System is going through a Assertion failure trying to figure it out currently. (says something about buffer size being to small)
 
 <strong> 0.4</strong>
 
