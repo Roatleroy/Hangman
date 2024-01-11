@@ -14,15 +14,17 @@ The project started as a goal to learn C++. It will take Ten Guesses before fail
 <h2> Changelog </h2>
 
 <strong>Future:  </strong>
-
 ULI = UNKNOWN LETTER INDICATOR
 
-- Find a way to go through word.txt file and to display chosen words to the screen by random number function
-- Take the string value, convert each letter to char and replace with ULI( '_' )
-  then display on screen
-- Create function to take in user input and to either change a ULI when a correct letter is guessed to correct letter
-  or diplay guessed letter and add a part of the Body to the hangman man
+- System is going through a Assertion failure trying to figure it out currently. (says something about buffer sizeb being to small)
 
+<strong> 0.4</strong>
+
+- Used fstream to read in from word.txt file
+- Created funciton to get the word with GETLINE
+- Created added three char arrays (one for holding the word, one for the ULI's, and one for displaying incorrect guesses)
+- Used updated main to display all the functions
+  
 <strong>0.3 </strong> 
 
 - Create Word Txt document
