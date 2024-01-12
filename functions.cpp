@@ -1,18 +1,5 @@
 #include "Header.h"
 
-
-void Hangman::dictionary() {
-
-	map <string, string> dictionary;
-
-	for (auto pair : dictionary) {
-		cout << pair.first;
-		cout << pair.second;
-	}
-	
-}
-
-
 void Hangman::Compare(char guess) {
 	int I = 0;
 
@@ -32,19 +19,17 @@ void Hangman::Compare(char guess) {
 
 }
 
-void Hangman::reset() {
-
-	count = 0;
-
-	for (int i = 0; i < sizeof(charArray); ++i) {
-		displayGuessArray[i] = ' ';
-	}
-
-}
 
 bool Hangman::CheckWin() {
 
 	int n = sizeof(charEmpty);
+
+	if (count == 10) {
+		cout << "    Fail!!   The word was: " << line;
+		cin.ignore();
+		cin.ignore();
+		return false;
+		}
 
 	for (int i = 0; i < n; ++i) {
 		if (charEmpty[i] == '-') {
@@ -52,10 +37,7 @@ bool Hangman::CheckWin() {
 		}
 	}
 
-	if (count == 10) {
-		return false;
-	}
-
+	cout << "     YOU WIN!!!!   ";
 		return false;
 
 }
@@ -64,6 +46,8 @@ bool Hangman::CheckWin() {
 void Hangman::displayguesses() {
 
 	int n = sizeof(displayGuessArray);
+
+	cout << "    ";
 
 	for (int i = 0; i < n; ++i) {
 		cout << displayGuessArray[i] << " ";
@@ -86,8 +70,11 @@ void Hangman::displayMenu() {
 }
 
 void Hangman::GenerateWord(ifstream &file) {
+	int P;
 
-	for (int i = 0; i < returnRandomNumber(); ++i) {
+	P = returnRandomNumber();
+
+	for (int i = 0; i < P; ++i) {
 		getline(file, line);
 	}
 
@@ -209,6 +196,5 @@ void Hangman::displayHangman() {
 			<< "         " << Man[8] << Man[9] << "   |" << endl
 			<< "        ______|" << endl;
 	}
-
    
 }

@@ -6,15 +6,11 @@
 #include <map>
 #include <cstdlib>
 #include <stdlib.h> 
-#include <cstring>
 
 using namespace std;
 
 class Hangman {
 public:
-
-	// Holds values retrieved from the words text folder
-	void dictionary();
 
 	// Displays on screen the instructions for the hangman game
 	void displayMenu();
@@ -37,8 +33,15 @@ public:
 
 	bool CheckWin();
 
-	void reset();
+	Hangman() {
+		for (int i = 0; i < sizeof(charArray); ++i) {
+			charArray[i] = '0';
+			charEmpty[i] = '0';
+			displayGuessArray[i] = '0';
+		}	
 
+		return;
+	}
 
 
 private:

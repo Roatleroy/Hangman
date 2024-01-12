@@ -3,18 +3,17 @@
 
 
 int main() {
-	Hangman Man;
+	
 
 	ifstream in("Words.txt");
 
 	char guess;
 	string repeat = "Y";
-	bool truefalse = true;
 
-	Man.GenerateWord(in);
 
 	while (repeat == "y" || repeat == "Y") {
 
+		Hangman Man;
 		Man.GenerateWord(in);
 
 		while (Man.CheckWin()) {
@@ -28,6 +27,8 @@ int main() {
 			cout << endl;
 			Man.displayguesses();
 			cout << endl;
+			cout << endl;
+			cout << "   ";
 			cin >> guess;
 			Man.Compare(guess);
 			system("CLS");
@@ -35,11 +36,10 @@ int main() {
 
 		cout << "Would you like to play again?: (Type y or Y for yes)" << endl;
 		cin >> repeat;
-
-		Man.reset();
-		
-		
+		system("CLS");
 	}
+
+	in.close();
 
 	return 0;
 }
