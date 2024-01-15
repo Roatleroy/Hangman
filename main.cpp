@@ -7,14 +7,18 @@ int main() {
 
 	ifstream in("Words.txt");
 
-	char guess;
+	
 	string repeat = "Y";
-
-
+	string hey;
+	returns bob;
+	
 	while (repeat == "y" || repeat == "Y") {
 
-		Hangman Man;
-		Man.GenerateWord(in);
+			hey = bob.WordReturn(in);
+
+			Hangman Man(hey);
+
+			char guess;
 
 		while (Man.CheckWin()) {
 
@@ -22,7 +26,7 @@ int main() {
 			cout << endl;
 			Man.displayHangman();
 			cout << endl;
-			Man.displayWord();
+		    Man.displayWord();
 			cout << endl;
 			cout << endl;
 			Man.displayguesses();

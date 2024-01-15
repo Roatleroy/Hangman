@@ -1,13 +1,23 @@
 #include "iostream"
 #include <vector>
+#include <cstring>
 #include <string>
 #include <fstream>
 #include "iomanip"
-#include <map>
 #include <cstdlib>
 #include <stdlib.h> 
 
 using namespace std;
+
+class returns {
+public: 
+	
+	// Retrieves a random word from the text file and generates its equvilent in ULI's
+	string WordReturn(ifstream& file);
+	
+	// Returns Random number based on time for random word retrieval 
+	int returnRandomNumber();
+};
 
 class Hangman {
 public:
@@ -15,40 +25,45 @@ public:
 	// Displays on screen the instructions for the hangman game
 	void displayMenu();
 
-	// Retrieves a random word from the text file and generates its equvilent in ULI's
-	void GenerateWord(ifstream &file);
-
 	// Displays the hangman and adds body parts as user guesses wrong
 	void displayHangman();
 
 	// Displays the users to the side when guessed wrong and on the ULI's when right
 	void displayguesses();
 
-	// Returns Random number based on time for random word retrieval 
-	int returnRandomNumber();
-
+	// Displays empty slots to user on screen
 	void displayWord();
 
+	// Checks if user imput matches any position in the string and replaces
+	// The same position on the empty array with the guess
 	void Compare(char guess);
 
+	// Checks if users count is more than ten or if any postion in the string has a ULI.
+	// If neither its a win
 	bool CheckWin();
 
-	Hangman() {
-		for (int i = 0; i < sizeof(charArray); ++i) {
-			charArray[i] = '0';
-			charEmpty[i] = '0';
-			displayGuessArray[i] = '0';
-		}	
 
-		return;
+	Hangman(const string& word) 
+		: charArray(word), charEmpty(charArray.size(), '-') {
+		for (int i = 0; i < 10; ++i) {
+			displayGuessArray[i] = '0';
+		}
+		count = 0;
 	}
 
 
+	void guessArray() {
+
+		charArray = " ";
+		charEmpty = " ";
+	}
+
+
+
 private:
-	string Man[10] = {"(", ")", "/", "-", "-", "/", "|", "|", "-", "-"};
-	char charArray[13];
-	char charEmpty[13];
-	char displayGuessArray[13];
-	string line;
+	string charArray;
+	string charEmpty;
+
+	char displayGuessArray[10];
 	int count = 0;
 };
