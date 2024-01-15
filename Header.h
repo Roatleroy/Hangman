@@ -1,11 +1,12 @@
 #include "iostream"
-#include <vector>
-#include <cstring>
 #include <string>
 #include <fstream>
-#include "iomanip"
+#include <sstream>
 #include <cstdlib>
 #include <stdlib.h> 
+#include <algorithm>
+#include <cctype>
+#include <locale>
 
 using namespace std;
 
@@ -43,8 +44,9 @@ public:
 	bool CheckWin();
 
 
-	Hangman(const string& word) 
+	Hangman (const string& word) 
 		: charArray(word), charEmpty(charArray.size(), '-') {
+
 		for (int i = 0; i < 10; ++i) {
 			displayGuessArray[i] = '0';
 		}

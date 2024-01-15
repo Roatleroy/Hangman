@@ -2,6 +2,27 @@
 
 //
 
+// Trim from start (in place)
+static inline void ltrim(string& s) {
+	s.erase(s.begin(), find_if(s.begin(), s.end(), [](unsigned char ch) {
+		return !isspace(ch);
+		}));
+}
+
+// Trim from end (in place)
+static inline void rtrim(string& s) {
+	s.erase(find_if(s.rbegin(), s.rend(), [](unsigned char ch) {
+		return !isspace(ch);
+		}).base(), s.end());
+}
+
+// Trim from both ends (in place)
+static inline void trim(string& s) {
+	ltrim(s);
+	rtrim(s);
+}
+
+
 //________________________________________________________________________________
 // ERROR: When player inputs last correct guess into charEmpty it can't push it;
 // Runtime error saftey kicks in. FIX!!
@@ -28,8 +49,6 @@ void Hangman::Compare(char guess) {
 
 bool Hangman::CheckWin() {
 
-	int n = sizeof(charEmpty);
-
 	if (count == 10) {
 		cout << "    Fail!!   The word was: " << charArray;
 		cin.ignore();
@@ -37,7 +56,7 @@ bool Hangman::CheckWin() {
 		return false;
 		}
 
-	for (size_t i = 0; i < n; ++i) {
+	for (size_t i = 0; i < charEmpty.size(); ++i) {
 		if (charEmpty[i] == '-') {
 			return true;
 		}
@@ -79,6 +98,11 @@ string returns::WordReturn(ifstream& file) {
 		getline(file, carrey);
 	}
 
+	trim(carrey);
+
+	file.clear();
+	file.seekg(0, std::ios::beg);
+
 	return carrey;
 
 }
@@ -95,7 +119,7 @@ void Hangman::displayWord() {
 
 	cout << "       ";
 
-	for (int i = 0; i < charArray.size(); i++) {
+	for (int i = 0; i < charEmpty.size(); i++) {
 		cout << charEmpty[i];
 	}
 }
