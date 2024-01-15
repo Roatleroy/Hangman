@@ -34,7 +34,6 @@ bool Hangman::CheckWin() {
 		cout << "    Fail!!   The word was: " << charArray;
 		cin.ignore();
 		cin.ignore();
-		guessArray();
 		return false;
 		}
 
@@ -46,7 +45,6 @@ bool Hangman::CheckWin() {
 
 	cout << "     YOU WIN!!!!   ";
 	cin.ignore();
-	guessArray();
 		return false;
 
 }

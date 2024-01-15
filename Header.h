@@ -51,15 +51,6 @@ public:
 		count = 0;
 	}
 
-
-	void guessArray() {
-
-		charArray = " ";
-		charEmpty = " ";
-	}
-
-
-
 private:
 	string charArray;
 	string charEmpty;
