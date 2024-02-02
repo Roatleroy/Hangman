@@ -23,9 +23,7 @@ static inline void trim(string& s) {
 }
 
 
-//________________________________________________________________________________
-// ERROR: When player inputs last correct guess into charEmpty it can't push it;
-// Runtime error saftey kicks in. FIX!!
+
 void Hangman::Compare(char guess) {
 	int I = 0;
 
@@ -45,7 +43,6 @@ void Hangman::Compare(char guess) {
 	}
 	
 }
-//__________________________________________________________________________
 
 bool Hangman::CheckWin() {
 
